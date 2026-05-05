@@ -18,7 +18,8 @@ export default function PoliticianProfilePage() {
       const { data, error } = await supabase
         .from("politician_info")
         .select("*")
-        .single();
+        .limit(1)
+        .maybeSingle();
 
       if (error) {
         console.error("데이터 로드 실패:", error.message);

@@ -1,53 +1,59 @@
 "use client";
 
-import { GraduationCap, Briefcase, Award, Heart, CheckCircle2, Users2, Building2 } from "lucide-react";
+import { GraduationCap, Briefcase, Award, Heart, CheckCircle2, Users2, ShieldCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
-// 1. 주요 경력 데이터를 나열 방식으로 변경 (타임라인 제거)
 const careers = [
   {
-    title: "경기도의원",
-    description: "현직",
-    icon: Briefcase,
-    current: true, // 현직 표시용
+    title: "행정학박사",
+    description: "학위",
+    icon: GraduationCap,
   },
   {
-    title: "더불어민주당 경기도당 대변인",
-    description: "현직",
-    icon: Briefcase,
-  },
-  {
-    title: "성지고등학교 운영위원장",
+    title: "경기도의회 더불어민주당 대표의원",
     description: "현직",
     icon: Users2,
+    current: true,
   },
   {
-    title: "용인시의원",
-    description: "전직",
-    icon: Building2,
+    title: "더불어민주당 기본사회위원회 부위원장",
+    description: "현직",
+    icon: Briefcase,
+    current: true,
   },
   {
-    title: "신갈고등학교 운영위원장",
+    title: "더불어민주당 전국광역의회의원협의회 대표",
+    description: "현직",
+    icon: Award,
+    current: true,
+  },
+  {
+    title: "경기도의회 보건복지위원회 위원장",
     description: "전직",
-    icon: Users2,
+    icon: Heart,
+  },
+  {
+    title: "경기도의회 인권증진특별위원회 위원장",
+    description: "전직",
+    icon: ShieldCheck,
   },
 ];
 
 const values = [
   {
     icon: Heart,
-    title: "국민 중심",
-    description: "모든 정책의 중심에는 국민이 있습니다.",
+    title: "민생 복지",
+    description: "모든 정책의 최우선 순위는 도민의 삶과 복지 향상에 있습니다.",
   },
   {
-    icon: Award,
-    title: "현장 우선",
-    description: "답은 항상 현장에 있다는 믿음으로 발로 뜁니다.",
+    icon: Users2,
+    title: "인권 기반",
+    description: "사회적 약자의 목소리를 대변하며, 인권에 기반한 공동체를 지향합니다.",
   },
   {
-    icon: Briefcase,
-    title: "실용 정치",
-    description: "이념보다 민생, 실질적인 변화를 만들어냅니다.",
+    icon: CheckCircle2,
+    title: "책임 실천",
+    description: "'선행기언(先行其言)'의 자세로 말보다 행동이 앞서는 정치를 실천합니다.",
   },
 ];
 
@@ -123,11 +129,12 @@ export function AboutSection() {
             <blockquote className="mt-8 p-8 bg-primary/5 rounded-3xl border-none relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
               <p className="text-xl font-medium text-foreground leading-relaxed">
-                &quot;정치는 거창한 담론이 아니라, <br/>
-                주민의 평범한 일상을 지키는 일입니다.&quot;
+                &quot;정치는 특정 계층의 전유물이 아니라,<br/>
+                우리의 일상 속에서 누구나 참여해야 하는<br/>
+                공동의 책임입니다.&quot;
               </p>
               <cite className="block mt-4 text-sm font-bold text-primary not-italic">
-                — 경기도의원 전자영
+                — 경기도의원 최종현
               </cite>
             </blockquote>
           </div>

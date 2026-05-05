@@ -10,8 +10,8 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: '전자영 의원 | AI 스마트 캠프',
-  description: '국민과 함께하는 전자영 경기도의원 AI스마트캠프',
+  title: '최종현 | 경기도의원 수원시 제7선거구',
+  description: '도민과 함께하는 최종현 경기도의원 공식 홈페이지',
   generator: 'v0.app',
   icons: {
     icon: [

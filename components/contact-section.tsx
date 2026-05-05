@@ -12,27 +12,27 @@ import {
   Clock,
   Send,
   Facebook,
-  Instagram,
+  Globe,
   Youtube,
 } from "lucide-react";
 
 const contactInfo = [
   {
     icon: MapPin,
-    label: "선거사무소",
-    value: "경기도 용인시 기흥구 구갈로29 3층",
-    subValue: "구갈초 앞 세명약국 건물 3층",
+    label: "의원 사무실",
+    value: "경기도 수원시 영통구 도청로 30",
+    subValue: "경기도의회 1112호",
   },
   {
     icon: Phone,
     label: "전화",
-    value: "031-282-8155",
+    value: "031-8008-7050",
     subValue: "언제든 문의해 주세요",
   },
   {
     icon: Mail,
     label: "이메일",
-    value: "goodyongin@naver.com",
+    value: "ds2rjm@empal.com",
     subValue: "언제든 문의해 주세요",
   },
   {
@@ -44,9 +44,9 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, label: "Facebook", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Youtube, label: "YouTube", href: "#" },
+  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/channel/UC1JM2qrgEZZzQNWXlPtX-Eg" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/jonghyun.choi.1422/about" },
+  { icon: Globe, label: "네이버 블로그", href: "https://blog.naver.com/caravao" },
 ];
 
 export function ContactSection() {
@@ -81,7 +81,7 @@ export function ContactSection() {
             연락하기
           </span>
           <h2 className="text-4xl font-bold mb-4 text-balance">
-            <span className="text-primary">국민의 목소리</span>를 듣겠습니다
+            <span className="text-primary">도민의 목소리</span>를 듣겠습니다
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             정책 제안, 민원, 격려 등 어떤 내용이든 좋습니다.

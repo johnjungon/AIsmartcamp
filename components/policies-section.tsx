@@ -1,63 +1,57 @@
 "use client";
 
 import {
-  Cpu,
   Building2,
-  GraduationCap,
+  Store,
   Leaf,
+  Car,
+  GraduationCap,
   ShieldCheck,
-  Users,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const policies = [
   {
-    icon: Cpu,
-    title: "AI 산업 육성",
-    description:
-      "글로벌 AI 경쟁력 강화를 위한 인재 양성 및 R&D 투자 확대. AI 스타트업 생태계 조성.",
-    progress: 75,
-    tags: ["기술", "경제"],
-  },
-  {
     icon: Building2,
-    title: "청년 주거 안정",
+    title: "구도심 재건축·리모델링 및 도시환경 재정비 추진",
     description:
-      "청년층을 위한 공공임대주택 공급 확대 및 전월세 지원금 상향. 주거 사다리 복원.",
-    progress: 60,
-    tags: ["청년", "주거"],
+      "수원의 최초 계획도시인 매탄동의 노후화된 주거 환경 개선을 위해 재건축과 리모델링 사업을 지원합니다.",
+    tags: ["주거", "도시재생"],
   },
   {
-    icon: GraduationCap,
-    title: "교육 혁신",
+    icon: Store,
+    title: "구매탄 전통시장 활성화 및 소상공인 지원",
     description:
-      "미래 인재 양성을 위한 교육 시스템 개편. 디지털 리터러시 교육 의무화.",
-    progress: 45,
-    tags: ["교육", "미래"],
+      "구매탄 시장 현대화 사업을 추진하고, 골목상권 소상공인과 영세 자영업자를 위한 실질적인 지원 정책을 마련합니다.",
+    tags: ["전통시장", "소상공인"],
   },
   {
     icon: Leaf,
-    title: "탄소중립 추진",
+    title: "원천리천 수변공원 조성 및 주민 휴식 공간 확충",
     description:
-      "2050 탄소중립 실현을 위한 친환경 에너지 전환 및 녹색 일자리 창출.",
-    progress: 30,
-    tags: ["환경", "에너지"],
+      "지역의 소중한 자산인 원천리천을 수변공원으로 조성하여 주민들이 즐겨 찾는 쾌적한 쉼터로 만듭니다.",
+    tags: ["환경", "공원"],
+  },
+  {
+    icon: Car,
+    title: "교통체계 개선을 통한 지·정체 상습지역 해소",
+    description:
+      "신도심 아파트 지역의 고질적인 교통 정체 문제를 해결하기 위해 스마트한 교통 체계 개선안을 도입합니다.",
+    tags: ["교통", "스마트"],
+  },
+  {
+    icon: GraduationCap,
+    title: "교육 복지 강화 및 살기 좋은 공동체 문화 조성",
+    description:
+      "매탄동 아이들을 위한 교육 인프라를 확충하고, 주민들이 서로 소통하며 정주 의식을 높일 수 있는 '마을 만들기' 활동을 지원합니다.",
+    tags: ["교육", "공동체"],
   },
   {
     icon: ShieldCheck,
-    title: "디지털 안전망",
+    title: "공공의료 서비스 접근성 확대 및 복지 체계 강화",
     description:
-      "사이버 보안 강화 및 개인정보 보호법 개정. 디지털 취약계층 지원 확대.",
-    progress: 55,
-    tags: ["보안", "복지"],
-  },
-  {
-    icon: Users,
-    title: "지역 균형 발전",
-    description:
-      "수도권 집중 해소를 위한 지방 분권 강화 및 지역 특화 산업 육성.",
-    progress: 40,
-    tags: ["지역", "균형"],
+      "도민의 편의를 위해 공공심야약국을 활성화하고, 저출생·고령 사회에 대응하는 종합적인 돌봄 시스템을 지역에 안착시킵니다.",
+    tags: ["의료", "복지"],
   },
 ];
 
@@ -74,8 +68,7 @@ export function PoliciesSection() {
             <span className="text-primary">6대 핵심 공약</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            국민과의 약속, 반드시 지키겠습니다.
-            투명하게 진행 상황을 공개합니다.
+            도민과의 약속, 반드시 지키겠습니다.
           </p>
         </div>
 
@@ -101,7 +94,7 @@ export function PoliciesSection() {
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="flex flex-wrap gap-2">
                   {policy.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
@@ -110,24 +103,6 @@ export function PoliciesSection() {
                       {tag}
                     </span>
                   ))}
-                </div>
-
-                {/* Progress Bar */}
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs text-muted-foreground">
-                      진행률
-                    </span>
-                    <span className="text-sm font-semibold text-primary">
-                      {policy.progress}%
-                    </span>
-                  </div>
-                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-primary rounded-full transition-all duration-500"
-                      style={{ width: `${policy.progress}%` }}
-                    />
-                  </div>
                 </div>
               </CardContent>
             </Card>
