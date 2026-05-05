@@ -7,6 +7,7 @@ import { AboutSection } from "@/components/about-section";
 import { PoliciesSection } from "@/components/policies-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 
 export default function PoliticianProfilePage() {
   const [politicianData, setPoliticianData] = useState<any>(null);
@@ -38,8 +39,8 @@ export default function PoliticianProfilePage() {
 
   return (
     <main className="min-h-screen">
-      {/* 여기서 name, image_url, district라는 이름표를 붙여서 보냅니다 */}
-      <HeroSection 
+      <Header />
+      <HeroSection
         name={politicianData?.name} 
         imageUrl={politicianData?.image_url} 
         district={politicianData?.district}
