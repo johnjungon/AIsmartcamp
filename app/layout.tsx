@@ -10,8 +10,8 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: '최종현 | 경기도의원 수원시 제7선거구',
-  description: '도민과 함께하는 최종현 경기도의원 공식 홈페이지',
+  title: '최종현 후보자 | 경기도의원 수원시 제7선거구',
+  description: '도민과 함께하는 최종현 경기도의원 후보자 AI스마트캠프',
   generator: 'v0.app',
   icons: {
     icon: [

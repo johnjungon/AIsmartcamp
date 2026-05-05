@@ -17,6 +17,7 @@ export function HeroSection({ name, imageUrl, district }: any) {
           src="/banner-choi.png"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
         />
@@ -99,6 +100,7 @@ export function HeroSection({ name, imageUrl, district }: any) {
                   src={imageUrl || "/profile-choi.png"}
                   alt={name || "최종현 의원"}
                   fill
+                  sizes="(max-width: 768px) 320px, 384px"
                   className="object-cover object-top"
                   priority
                 />
