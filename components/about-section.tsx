@@ -125,7 +125,7 @@ export function AboutSection() {
               ))}
             </div>
 
-            {/* Quote (전자영 의원님 스타일로 수정) */}
+            {/* Quote */}
             <blockquote className="mt-8 p-8 bg-primary/5 rounded-3xl border-none relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
               <p className="text-xl font-medium text-foreground leading-relaxed">

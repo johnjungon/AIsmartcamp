@@ -97,7 +97,7 @@ export function HeroSection({ name, imageUrl, district }: any) {
               {/* 프로필 이미지 카드 */}
               <div className="relative w-80 h-96 lg:w-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-white">
                 <Image
-                  src={imageUrl || "/profile-choi.png"}
+                  src={imageUrl || "/profile-choi2.png"}
                   alt={name || "최종현 의원"}
                   fill
                   sizes="(max-width: 768px) 320px, 384px"
