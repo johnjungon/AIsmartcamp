@@ -127,9 +127,8 @@ export function AboutSection() {
             <blockquote className="mt-8 p-8 bg-primary/5 rounded-3xl border-none relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
               <p className="text-xl font-medium text-foreground leading-relaxed">
-                &quot;정치는 특정 계층의 전유물이 아니라,<br/>
-                우리의 일상 속에서 누구나 참여해야 하는<br/>
-                공동의 책임입니다.&quot;
+                &quot;정치는<br/>특정 계층의 전유물이 아니라,<br/>
+                우리의 일상 속에서<br/> 누구나 참여해야 하는 공동의 책임입니다.&quot;
               </p>
               <cite className="block mt-4 text-sm font-bold text-primary not-italic">
                 — 경기도의원 최종현
