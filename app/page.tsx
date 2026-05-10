@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
 import { PoliciesSection } from "@/components/policies-section";
@@ -9,43 +5,57 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
-export default function PoliticianProfilePage() {
-  const [politicianData, setPoliticianData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+export const revalidate = 300;
 
-  useEffect(() => {
-    async function getProfile() {
-      setLoading(true);
-      const { data, error } = await supabase
-        .from("politician_info")
-        .select("*")
-        .limit(1)
-        .maybeSingle();
+type PoliticianProfile = {
+  name?: string | null;
+  image_url?: string | null;
+  district?: string | null;
+};
 
-      if (error) {
-        console.error("데이터 로드 실패:", error.message);
-      } else {
-        // [중요] 여기서 브라우저 콘솔(F12)에 데이터가 찍힙니다.
-        console.log("DB에서 가져온 데이터:", data); 
-        setPoliticianData(data);
-      }
-      setLoading(false);
+async function getProfile(): Promise<PoliticianProfile | null> {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return null;
+  }
+
+  try {
+    const response = await fetch(
+      `${supabaseUrl}/rest/v1/politician_info?select=*&limit=1`,
+      {
+        headers: {
+          apikey: supabaseAnonKey,
+          Authorization: `Bearer ${supabaseAnonKey}`,
+        },
+        next: { revalidate },
+      },
+    );
+
+    if (!response.ok) {
+      return null;
     }
 
-    getProfile();
-  }, []);
+    const [profile] = (await response.json()) as PoliticianProfile[];
+    return profile ?? null;
+  } catch {
+    return null;
+  }
+}
 
-  if (loading) return <div className="min-h-screen flex items-center justify-center">데이터를 불러오는 중...</div>;
+export default async function PoliticianProfilePage() {
+  const politicianData = await getProfile();
 
   return (
     <main className="min-h-screen">
       <Header />
       <HeroSection
-        name={politicianData?.name} 
-        imageUrl={politicianData?.image_url} 
+        name={politicianData?.name}
+        imageUrl={politicianData?.image_url}
         district={politicianData?.district}
       />
-      
+
       <AboutSection />
       <PoliciesSection />
       <ContactSection />

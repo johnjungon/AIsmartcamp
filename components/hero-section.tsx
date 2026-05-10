@@ -14,7 +14,7 @@ export function HeroSection({ name, imageUrl, district }: any) {
       {/* 배너 배경 이미지 */}
       <div className="absolute inset-0">
         <Image
-          src="/banner-choi.png"
+          src="/banner-choi.webp"
           alt=""
           fill
           sizes="100vw"
@@ -97,7 +97,7 @@ export function HeroSection({ name, imageUrl, district }: any) {
               {/* 프로필 이미지 카드 */}
               <div className="relative w-80 h-96 lg:w-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-white">
                 <Image
-                  src={imageUrl || "/profile-choi2.png"}
+                  src={imageUrl || "/profile-choi2.webp"}
                   alt={name || "최종현 의원"}
                   fill
                   sizes="(max-width: 768px) 320px, 384px"

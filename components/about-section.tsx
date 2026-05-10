@@ -1,5 +1,3 @@
-"use client";
-
 import { GraduationCap, Briefcase, Award, Heart, CheckCircle2, Users2, ShieldCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
